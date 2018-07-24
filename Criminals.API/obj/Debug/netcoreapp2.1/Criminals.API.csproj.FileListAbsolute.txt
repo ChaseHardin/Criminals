@@ -12,3 +12,8 @@
 /Users/chasehardin/dev/jis/Criminals/Criminals.API/obj/Debug/netcoreapp2.1/Criminals.API.RazorTargetAssemblyInfo.cache
 /Users/chasehardin/dev/jis/Criminals/Criminals.API/obj/Debug/netcoreapp2.1/Criminals.API.dll
 /Users/chasehardin/dev/jis/Criminals/Criminals.API/obj/Debug/netcoreapp2.1/Criminals.API.pdb
+/Users/chasehardin/dev/jis/Criminals/Criminals.API/bin/Debug/netcoreapp2.1/Criminals.Business.dll
+/Users/chasehardin/dev/jis/Criminals/Criminals.API/bin/Debug/netcoreapp2.1/Criminals.Data.dll
+/Users/chasehardin/dev/jis/Criminals/Criminals.API/bin/Debug/netcoreapp2.1/Criminals.Business.pdb
+/Users/chasehardin/dev/jis/Criminals/Criminals.API/bin/Debug/netcoreapp2.1/Criminals.Data.pdb
+/Users/chasehardin/dev/jis/Criminals/Criminals.API/obj/Debug/netcoreapp2.1/Criminals.API.csproj.CopyComplete
