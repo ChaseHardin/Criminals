@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-
-namespace Criminals.API.Models
+using Criminals.Data.Models;
+namespace Criminals.Data
 {
     public class CriminalsContext : DbContext
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Criminals.API.Models
+namespace Criminals.Data.Models
 {
     public class CaseReport
     {

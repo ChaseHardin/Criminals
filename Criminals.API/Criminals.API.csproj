@@ -14,4 +14,8 @@
       <Version>2.1.1</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Criminals.Business\Criminals.Business.csproj" />
+    <ProjectReference Include="..\Criminals.Data\Criminals.Data.csproj" />
+  </ItemGroup>
 </Project>

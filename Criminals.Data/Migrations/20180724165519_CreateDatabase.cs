@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Criminals.API.Migrations
+namespace Criminals.Data.Migrations
 {
     public partial class CreateDatabase : Migration
     {
