@@ -6,6 +6,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Criminals.Business", "Crimi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Criminals.Data", "Criminals.Data\Criminals.Data.csproj", "{F992D779-C0B5-4AF8-B160-AA83849BD022}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Criminals.Business.Tests", "Criminals.Business.Tests\Criminals.Business.Tests.csproj", "{906FCC37-4003-4116-B62C-6B9BBCDBA017}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Criminals.API.Tests", "Criminals.API.Tests\Criminals.API.Tests.csproj", "{9F3B39D4-0622-40EF-94E4-DC372C765706}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +28,13 @@ Global
 		{F992D779-C0B5-4AF8-B160-AA83849BD022}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F992D779-C0B5-4AF8-B160-AA83849BD022}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F992D779-C0B5-4AF8-B160-AA83849BD022}.Release|Any CPU.Build.0 = Release|Any CPU
+		{906FCC37-4003-4116-B62C-6B9BBCDBA017}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{906FCC37-4003-4116-B62C-6B9BBCDBA017}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{906FCC37-4003-4116-B62C-6B9BBCDBA017}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{906FCC37-4003-4116-B62C-6B9BBCDBA017}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F3B39D4-0622-40EF-94E4-DC372C765706}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F3B39D4-0622-40EF-94E4-DC372C765706}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F3B39D4-0622-40EF-94E4-DC372C765706}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F3B39D4-0622-40EF-94E4-DC372C765706}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
