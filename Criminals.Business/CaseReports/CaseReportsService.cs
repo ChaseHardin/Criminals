@@ -1,4 +1,5 @@
 ﻿using System;
+using Criminals.Business.CaseReports.Commands;
 
 namespace Criminals.Business.CaseReports
 {

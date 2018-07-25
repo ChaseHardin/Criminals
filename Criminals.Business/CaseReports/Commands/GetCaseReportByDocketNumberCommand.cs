@@ -2,7 +2,7 @@
 using System.Linq;
 using Criminals.Data;
 
-namespace Criminals.Business.CaseReports
+namespace Criminals.Business.CaseReports.Commands
 {
     public class GetCaseReportByDocketNumberCommand
     {

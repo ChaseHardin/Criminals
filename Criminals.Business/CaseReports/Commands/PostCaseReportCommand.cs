@@ -2,7 +2,7 @@
 using Criminals.Data;
 using Criminals.Data.Models;
 
-namespace Criminals.Business.CaseReports
+namespace Criminals.Business.CaseReports.Commands
 {
     public class PostCaseReportCommand
     {
