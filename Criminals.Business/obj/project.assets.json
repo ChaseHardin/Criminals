@@ -5296,7 +5296,7 @@
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/chasehardin/.nuget/NuGet/NuGet.Config"
+        "/Users/chasehardin/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
