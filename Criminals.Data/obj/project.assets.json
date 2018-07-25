@@ -5261,28 +5261,30 @@
     ]
   },
   "packageFolders": {
-    "/Users/chasehardin/.nuget/packages/": {},
-    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "C:\\Users\\chasehardin\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/chasehardin/dev/jis/Criminals/Criminals.Data/Criminals.Data.csproj",
+      "projectUniqueName": "Z:\\dev\\jis\\Criminals\\Criminals.Data\\Criminals.Data.csproj",
       "projectName": "Criminals.Data",
-      "projectPath": "/Users/chasehardin/dev/jis/Criminals/Criminals.Data/Criminals.Data.csproj",
-      "packagesPath": "/Users/chasehardin/.nuget/packages/",
-      "outputPath": "/Users/chasehardin/dev/jis/Criminals/Criminals.Data/obj/",
+      "projectPath": "Z:\\dev\\jis\\Criminals\\Criminals.Data\\Criminals.Data.csproj",
+      "packagesPath": "C:\\Users\\chasehardin\\.nuget\\packages\\",
+      "outputPath": "Z:\\dev\\jis\\Criminals\\Criminals.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/chasehardin/.config/NuGet/NuGet.Config"
+        "C:\\Users\\chasehardin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
