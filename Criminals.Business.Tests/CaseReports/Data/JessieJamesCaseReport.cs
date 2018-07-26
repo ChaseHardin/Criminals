@@ -1,7 +1,7 @@
 ﻿using System;
 using Criminals.Data.Models;
 
-namespace Criminals.Business.Tests.CaseReports
+namespace Criminals.Business.Tests.CaseReports.Data
 {
     public class JessieJamesCaseReport
     {

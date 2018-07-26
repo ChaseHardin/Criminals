@@ -1,5 +1,6 @@
 ﻿using System;
 using Criminals.Business.CaseReports;
+using Criminals.Business.Tests.CaseReports.Data;
 using Criminals.Data;
 using Criminals.Data.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
