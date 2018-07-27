@@ -19,7 +19,13 @@ namespace Criminals.API.CaseReports
         [HttpGet, Route("{docketNumber}")]
         public ActionResult GetCaseReportByDocketNumber(Guid docketNumber)
         {
-            return Ok(_caseReportsService.GetCaseReportByDocketNumber(docketNumber));
+            var response = _caseReportsService.GetCaseReportByDocketNumber(docketNumber);
+            if (response?.DocketNumber == docketNumber)
+            {
+                return Ok(response);
+            }
+            
+            return BadRequest();
         }
     }
 }

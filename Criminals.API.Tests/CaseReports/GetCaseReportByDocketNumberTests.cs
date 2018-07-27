@@ -32,6 +32,30 @@ namespace Criminals.API.Tests.CaseReports
             }
         }
 
+        [TestMethod]
+        public void GetCaseReportByDocketNumber__ReturnsBadRequest__WhenDocketNumberDoesNotExist()
+        {
+            using (var client = new HttpClient())
+            {
+                deleteAllCaseReportsFromDatabase();
+                
+                var docketNumber = Guid.NewGuid();
+                
+                var response = client.GetAsync($"https://localhost:5001/api/caseReports/{docketNumber}").Result;
+                
+                Assert.AreEqual(response.StatusCode, HttpStatusCode.BadRequest);
+            }
+        }
+
+        private void deleteAllCaseReportsFromDatabase()
+        {
+            using (var db = new CriminalsContext())
+            {
+                db.CaseReports.RemoveRange();
+                db.SaveChanges();
+            }
+        }
+
         private CaseReport deserializedCaseReport(string result)
         {
             return JsonConvert.DeserializeObject<CaseReport>(result);
