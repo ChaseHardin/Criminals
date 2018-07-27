@@ -1,4 +1,6 @@
-﻿using System.Net.Http;
+﻿using System;
+using System.Net;
+using System.Net.Http;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Criminals.API.Tests.CaseReports
@@ -7,17 +9,19 @@ namespace Criminals.API.Tests.CaseReports
     public class GetCaseReportByDocketNumberTests
     {
         [TestMethod]
-        public void GetCaseReportByDocketNumberSuccessfully()
+        public void GetCaseReportByDocketNumber_ReturnsOkResponseStatusCode()
         {
             using (var client = new HttpClient())
             {
-                var response = client.GetAsync("https://localhost:5001/api/values").Result;
+                var docketNumber = Guid.NewGuid();
+                var response = client.GetAsync($"https://localhost:5001/api/caseReports/{docketNumber}").Result;
 
-                var expected = "[\"value1\",\"value2\"]";
-                var actual = response.Content.ReadAsStringAsync().Result;
-                Assert.AreEqual(expected, actual);
+                var actualDataReturned = response.Content.ReadAsStringAsync().Result;
+                var expectedDataReturned = $"\"{docketNumber}\"";
+                
+                Assert.AreEqual(response.StatusCode, HttpStatusCode.OK);
+                Assert.AreEqual(actualDataReturned, expectedDataReturned);
             }
-            
         }
     }
 }
