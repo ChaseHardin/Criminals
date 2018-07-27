@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Criminals.Business.CaseReports;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Criminals.API.CaseReports
@@ -8,10 +9,17 @@ namespace Criminals.API.CaseReports
     [ApiController]
     public class CaseReportsController : ControllerBase
     {
+        private readonly CaseReportsService _caseReportsService;
+
+        public CaseReportsController()
+        {
+            _caseReportsService = new CaseReportsService();
+        }
+
         [HttpGet, Route("{docketNumber}")]
         public ActionResult GetCaseReportByDocketNumber(Guid docketNumber)
         {
-            return Ok(docketNumber);
+            return Ok(_caseReportsService.GetCaseReportByDocketNumber(docketNumber));
         }
     }
 }
