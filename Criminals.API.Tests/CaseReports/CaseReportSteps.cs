@@ -13,10 +13,10 @@ namespace Criminals.API.Tests.CaseReports
     {
         private readonly Guid _docketNumber;
         private HttpResponseMessage _url;
-        
-        public CaseReportSteps(Guid docketNumber)
+
+        public CaseReportSteps()
         {
-            _docketNumber = docketNumber;
+            _docketNumber = Guid.NewGuid();
         }
 
         public void GivenCaseReport()
@@ -30,18 +30,35 @@ namespace Criminals.API.Tests.CaseReports
                     Description = "Jessie James broke out of prison.",
                     OpenDate = DateTime.Now
                 };
-                
+
                 db.CaseReports.Add(caseReport);
                 db.SaveChanges();
             }
         }
-
-        public void WhenGetCaseReportByDocketNumberRequestIsMade(HttpClient client)
+        
+        public static void GivenNoCaseReportsExist()
         {
-            _url = client.GetAsync($"https://localhost:5001/api/caseReports/{_docketNumber}").Result;
+            using (var db = new CriminalsContext())
+            {
+                db.CaseReports.RemoveRange();
+                db.SaveChanges();
+            }
         }
 
-        public void ThenHttpResponseStatusShouldBeOk()
+        public void WhenGetCaseReportByDocketNumberRequestIsMade()
+        {
+            using (var client = new HttpClient())
+            {
+                _url = client.GetAsync($"https://localhost:5001/api/caseReports/{_docketNumber}").Result;
+            }
+        }
+        
+        public void ThenHttpResponseStatusCodeShouldBeBadRequest()
+        {
+            Assert.AreEqual(_url.StatusCode, HttpStatusCode.BadRequest);
+        }
+
+        public void ThenHttpResponseStatusCodeShouldBeOk()
         {
             Assert.AreEqual(_url.StatusCode, HttpStatusCode.OK);
         }
@@ -50,13 +67,13 @@ namespace Criminals.API.Tests.CaseReports
         {
             var caseReport = DeserializedCaseReport(_url.Content.ReadAsStringAsync().Result);
             var expectedCaseReport = RetrieveCaseReportByDocket(_docketNumber);
-            
+
             Assert.AreEqual(caseReport.DocketNumber, expectedCaseReport.DocketNumber);
             Assert.AreEqual(caseReport.Title, expectedCaseReport.Title);
             Assert.AreEqual(caseReport.Description, expectedCaseReport.Description);
             Assert.AreEqual(caseReport.OpenDate, expectedCaseReport.OpenDate);
         }
-        
+
         private static CaseReport RetrieveCaseReportByDocket(Guid docketNumber)
         {
             using (var db = new CriminalsContext())
@@ -64,7 +81,7 @@ namespace Criminals.API.Tests.CaseReports
                 return db.CaseReports.First(x => x.DocketNumber == docketNumber);
             }
         }
-        
+
         private static CaseReport DeserializedCaseReport(string result)
         {
             return JsonConvert.DeserializeObject<CaseReport>(result);
