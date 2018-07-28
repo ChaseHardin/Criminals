@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Criminals.Business.CaseReports;
 using Microsoft.AspNetCore.Mvc;
 
