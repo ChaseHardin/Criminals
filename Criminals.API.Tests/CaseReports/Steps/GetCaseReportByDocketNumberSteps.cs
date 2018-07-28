@@ -36,7 +36,7 @@ namespace Criminals.API.Tests.CaseReports.Steps
             }
         }
         
-        public static void GivenNoCaseReportsExist()
+        public void GivenNoCaseReportsExist()
         {
             using (var db = new CriminalsContext())
             {

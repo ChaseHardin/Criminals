@@ -20,7 +20,7 @@ namespace Criminals.API.Tests.CaseReports
         [TestMethod]
         public void GetCaseReportByDocketNumber__ReturnsBadRequest__WhenDocketNumberDoesNotExist()
         {
-            GetCaseReportByDocketNumberSteps.GivenNoCaseReportsExist();
+            _steps.GivenNoCaseReportsExist();
             _steps.WhenGetCaseReportByDocketNumberRequestIsMade();
             _steps.ThenHttpResponseStatusCodeShouldBeNotFoundRequest();
         }
