@@ -26,5 +26,11 @@ namespace Criminals.API.CaseReports
             
             return BadRequest();
         }
+
+        [HttpPost, Route("")]
+        public ActionResult PostCaseReport(CaseReportViewModel caseReportViewModel)
+        {
+            return Ok(_caseReportsService.PostCaseReport(caseReportViewModel));
+        }
     }
 }

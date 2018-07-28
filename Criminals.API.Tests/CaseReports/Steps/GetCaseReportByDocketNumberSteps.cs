@@ -7,19 +7,19 @@ using Criminals.Data.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 
-namespace Criminals.API.Tests.CaseReports
+namespace Criminals.API.Tests.CaseReports.Steps
 {
-    public class CaseReportSteps
+    public class GetCaseReportByDocketNumberSteps
     {
         private readonly Guid _docketNumber;
         private HttpResponseMessage _url;
 
-        public CaseReportSteps()
+        public GetCaseReportByDocketNumberSteps()
         {
             _docketNumber = Guid.NewGuid();
         }
 
-        public void GivenCaseReport()
+        public void GivenCaseReportExistsInDatabase()
         {
             using (var db = new CriminalsContext())
             {
