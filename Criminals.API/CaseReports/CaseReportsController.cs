@@ -18,19 +18,19 @@ namespace Criminals.API.CaseReports
         [HttpGet, Route("{docketNumber}")]
         public ActionResult GetCaseReportByDocketNumber(Guid docketNumber)
         {
-            var response = _caseReportsService.GetCaseReportByDocketNumber(docketNumber);
+            var response = CaseReportsService.GetCaseReportByDocketNumber(docketNumber);
             if (response?.DocketNumber == docketNumber)
             {
                 return Ok(response);
             }
             
-            return BadRequest();
+            return NotFound();
         }
 
         [HttpPost, Route("")]
         public ActionResult PostCaseReport(CaseReportViewModel caseReportViewModel)
         {
-            return Ok(_caseReportsService.PostCaseReport(caseReportViewModel));
+            return Ok(CaseReportsService.PostCaseReport(caseReportViewModel));
         }
     }
 }

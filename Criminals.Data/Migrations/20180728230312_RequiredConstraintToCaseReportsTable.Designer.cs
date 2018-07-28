@@ -4,14 +4,16 @@ using Criminals.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Criminals.Data.Migrations
 {
     [DbContext(typeof(CriminalsContext))]
-    partial class CriminalsContextModelSnapshot : ModelSnapshot
+    [Migration("20180728230312_RequiredConstraintToCaseReportsTable")]
+    partial class RequiredConstraintToCaseReportsTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

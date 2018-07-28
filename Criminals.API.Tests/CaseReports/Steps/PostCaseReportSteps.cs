@@ -21,21 +21,41 @@ namespace Criminals.API.Tests.CaseReports.Steps
         {
             _docketNumber = Guid.NewGuid();
         }
-        
+
         public void GivenCaseReport()
         {
             _caseReportViewModel = JessieJamesCaseReportViewModel.Build(_docketNumber);
         }
 
+        public void GivenCaseReportWithNoTitle()
+        {
+            _caseReportViewModel = new CaseReportViewModel
+            {
+                Title = null,
+                Description = "Test Description",
+                OpenDate = new DateTime()
+            };
+        }
+        
+        public void GivenCaseReportWithNoDescription()
+        {
+            _caseReportViewModel = new CaseReportViewModel
+            {
+                Title = "Test Title",
+                Description = null,
+                OpenDate = new DateTime()
+            };
+        }
+        
         public void WhenPostCaseReportRequestIsMade()
         {
             using (var client = new HttpClient())
             {
                 var content = new StringContent(
-                    JsonConvert.SerializeObject(_caseReportViewModel), 
-                    Encoding.UTF8, 
+                    JsonConvert.SerializeObject(_caseReportViewModel),
+                    Encoding.UTF8,
                     "application/json");
-                
+
                 _url = client.PostAsync("https://localhost:5001/api/caseReports", content).Result;
             }
         }
@@ -49,10 +69,15 @@ namespace Criminals.API.Tests.CaseReports.Steps
         {
             var actualCaseReport = RetrieveCaseReportByTitle(_docketNumber);
             var expectedCaseReport = JessieJamesCaseReportViewModel.Build(_docketNumber);
-            
+
             Assert.AreEqual(actualCaseReport.Title, expectedCaseReport.Title);
             Assert.AreEqual(actualCaseReport.Description, expectedCaseReport.Description);
             Assert.AreEqual(actualCaseReport.OpenDate.Date, expectedCaseReport.OpenDate.Date);
+        }
+
+        public void ThenHttpResponseStatusCodeShouldBeInternalServerError()
+        {
+            Assert.AreEqual(_url.StatusCode, HttpStatusCode.InternalServerError);
         }
 
         private static CaseReport RetrieveCaseReportByTitle(Guid uniqueIdentifier)

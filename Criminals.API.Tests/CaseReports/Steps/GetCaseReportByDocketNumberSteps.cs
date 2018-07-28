@@ -53,9 +53,9 @@ namespace Criminals.API.Tests.CaseReports.Steps
             }
         }
         
-        public void ThenHttpResponseStatusCodeShouldBeBadRequest()
+        public void ThenHttpResponseStatusCodeShouldBeNotFoundRequest()
         {
-            Assert.AreEqual(_url.StatusCode, HttpStatusCode.BadRequest);
+            Assert.AreEqual(_url.StatusCode, HttpStatusCode.NotFound);
         }
 
         public void ThenHttpResponseStatusCodeShouldBeOk()

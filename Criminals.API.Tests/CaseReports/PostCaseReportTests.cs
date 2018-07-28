@@ -16,5 +16,21 @@ namespace Criminals.API.Tests.CaseReports
             _steps.ThenHttpResponseStatusCodeShouldBeOk();
             _steps.ThenSavesCaseReportSuccessfully();
         }
+
+        [TestMethod]
+        public void PostCaseReport__Returns500__WhenNoTitle()
+        {
+            _steps.GivenCaseReportWithNoTitle();
+            _steps.WhenPostCaseReportRequestIsMade();
+            _steps.ThenHttpResponseStatusCodeShouldBeInternalServerError();
+        }
+
+        [TestMethod]
+        public void PostCaseReport__Returns500__WhenNoDescription()
+        {
+            _steps.GivenCaseReportWithNoDescription();
+            _steps.WhenPostCaseReportRequestIsMade();
+            _steps.ThenHttpResponseStatusCodeShouldBeInternalServerError();
+        }
     }
 }

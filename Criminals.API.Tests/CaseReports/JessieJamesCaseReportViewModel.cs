@@ -3,7 +3,7 @@ using Criminals.Business.CaseReports;
 
 namespace Criminals.API.Tests.CaseReports
 {
-    public class JessieJamesCaseReportViewModel
+    public static class JessieJamesCaseReportViewModel
     {
         public static CaseReportViewModel Build(Guid docketNumber)
         {

@@ -6,23 +6,23 @@ namespace Criminals.API.Tests.CaseReports
     [TestClass]
     public class GetCaseReportByDocketNumberTests
     {
-        private readonly GetCaseReportByDocketNumberSteps _byDocketNumberSteps = new GetCaseReportByDocketNumberSteps();
+        private readonly GetCaseReportByDocketNumberSteps _steps = new GetCaseReportByDocketNumberSteps();
         
         [TestMethod]
         public void GetCaseReportByDocketNumber_ReturnsOkResponseWithCaseReport()
         {
-            _byDocketNumberSteps.GivenCaseReportExistsInDatabase();
-            _byDocketNumberSteps.WhenGetCaseReportByDocketNumberRequestIsMade();
-            _byDocketNumberSteps.ThenHttpResponseStatusCodeShouldBeOk();
-            _byDocketNumberSteps.ThenCaseReportIsSuccessfullySavedToTheDatabase();
+            _steps.GivenCaseReportExistsInDatabase();
+            _steps.WhenGetCaseReportByDocketNumberRequestIsMade();
+            _steps.ThenHttpResponseStatusCodeShouldBeOk();
+            _steps.ThenCaseReportIsSuccessfullySavedToTheDatabase();
         }
 
         [TestMethod]
         public void GetCaseReportByDocketNumber__ReturnsBadRequest__WhenDocketNumberDoesNotExist()
         {
             GetCaseReportByDocketNumberSteps.GivenNoCaseReportsExist();
-            _byDocketNumberSteps.WhenGetCaseReportByDocketNumberRequestIsMade();
-            _byDocketNumberSteps.ThenHttpResponseStatusCodeShouldBeBadRequest();
+            _steps.WhenGetCaseReportByDocketNumberRequestIsMade();
+            _steps.ThenHttpResponseStatusCodeShouldBeNotFoundRequest();
         }
     }
 }
