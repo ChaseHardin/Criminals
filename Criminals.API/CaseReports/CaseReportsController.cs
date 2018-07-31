@@ -18,10 +18,10 @@ namespace Criminals.API.CaseReports
         [HttpGet, Route("{docketNumber}")]
         public ActionResult GetCaseReportByDocketNumber(Guid docketNumber)
         {
-            var response = CaseReportsService.GetCaseReportByDocketNumber(docketNumber);
-            if (response?.DocketNumber == docketNumber)
+            var caseReport = _caseReportsService.GetCaseReportByDocketNumber(docketNumber);
+            if (caseReport?.DocketNumber == docketNumber)
             {
-                return Ok(response);
+                return Ok(caseReport);
             }
             
             return NotFound();
@@ -30,7 +30,14 @@ namespace Criminals.API.CaseReports
         [HttpPost, Route("")]
         public ActionResult PostCaseReport(CaseReportViewModel caseReportViewModel)
         {
-            return Ok(CaseReportsService.PostCaseReport(caseReportViewModel));
+            return Ok(_caseReportsService.PostCaseReport(caseReportViewModel));
+        }
+
+        [HttpDelete, Route("{docketNumber}")]
+        public ActionResult DeleteCaseReportByDocketNumber(Guid docketNumber)
+        {
+            _caseReportsService.DeleteCaseReportByDocketNumber(docketNumber);
+            return Ok();
         }
     }
 }

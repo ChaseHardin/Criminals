@@ -5,14 +5,19 @@ namespace Criminals.Business.CaseReports
 {
     public class CaseReportsService
     {
-        public static CaseReportViewModel PostCaseReport(CaseReportViewModel caseReportViewModel)
+        public CaseReportViewModel PostCaseReport(CaseReportViewModel caseReportViewModel)
         {
             return new PostCaseReportCommand(caseReportViewModel).Execute();
         }
 
-        public static CaseReportViewModel GetCaseReportByDocketNumber(Guid docketNumber)
+        public CaseReportViewModel GetCaseReportByDocketNumber(Guid docketNumber)
         {
             return new GetCaseReportByDocketNumberCommand(docketNumber).Execute();
+        }
+
+        public void DeleteCaseReportByDocketNumber(Guid docketNumber)
+        {
+            new DeleteCaseReportByDocketNumberCommand(docketNumber).Execute();
         }
     }
 }

@@ -16,8 +16,9 @@ namespace Criminals.Business.Tests.CaseReports
             var docketNumber = Guid.NewGuid();
             var caseReport = JessieJamesCaseReport.Build(docketNumber);
             SaveCaseReport(caseReport);
-
-            var actual = CaseReportsService.GetCaseReportByDocketNumber(docketNumber);
+            
+            var service = new CaseReportsService();
+            var actual = service.GetCaseReportByDocketNumber(docketNumber);
             
             Assert.AreEqual(actual.DocketNumber, caseReport.DocketNumber);
             Assert.AreEqual(actual.Title, caseReport.Title);

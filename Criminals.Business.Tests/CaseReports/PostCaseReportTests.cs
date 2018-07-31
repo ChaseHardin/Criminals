@@ -21,7 +21,7 @@ namespace Criminals.Business.Tests.CaseReports
             };
             
             var caseReportService = new CaseReportsService();
-            var actual = CaseReportsService.PostCaseReport(caseReport);
+            var actual = caseReportService.PostCaseReport(caseReport);
             
             Assert.AreEqual(actual.Title, caseReport.Title);
             Assert.AreEqual(actual.Description, caseReport.Description);
@@ -38,7 +38,7 @@ namespace Criminals.Business.Tests.CaseReports
             };
             
             var caseReportService = new CaseReportsService();
-            CaseReportsService.PostCaseReport(caseReport);
+            caseReportService.PostCaseReport(caseReport);
 
             var dbReport = GetCaseReportFromDatabase(title);
             
