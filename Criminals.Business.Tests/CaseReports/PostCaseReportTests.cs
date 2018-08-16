@@ -8,7 +8,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Criminals.Business.Tests.CaseReports
 {
     [TestClass]
-    public class UnitTest1
+    public class PostCaseReportTests
     {
         [TestMethod]
         public void AddCaseReport__SavesReportToDatabase__ReturnsViewModel()
